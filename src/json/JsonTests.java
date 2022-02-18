@@ -18,7 +18,7 @@ public class JsonTests {
         InputStream fileInputStream = new FileInputStream(file);
 
         Scanner scanner = new Scanner(fileInputStream);
-        StringJoiner result = new StringJoiner(","+"\n"+" ");
+        StringJoiner result = new StringJoiner(","+"\n");
         String result1;
 
 
@@ -45,8 +45,9 @@ public class JsonTests {
             System.out.println(json);
 
 
-          result.add(json).add(" ");
-         result1 = "[" + "\n" + "  " + String.valueOf(result) + str3 + "\n" + "]";
+          result.add(json);
+
+         result1 = " [" + "\n" + "  " + String.valueOf(result) + str3 + "\n" + " ]";
             File file1 = new File("./User.json");
             //try-with-resources
             try (FileWriter writer = new FileWriter(file1))
